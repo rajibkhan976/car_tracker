@@ -41,7 +41,7 @@
 
           <v-list-item-content>
             <v-list-item-title>
-              <router-link :to="item.route" tag="span" style="cursor: pointer">{{ item.title }}</router-link>
+              <router-link :to="item.route" class="d-block" tag="span" style="cursor: pointer">{{ item.title }}</router-link>
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
