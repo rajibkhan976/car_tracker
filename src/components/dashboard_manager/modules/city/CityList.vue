@@ -191,7 +191,7 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
-import MenuBar from "../../MenuBar.vue";
+import MenuBar from "../../MenuBar";
 import { VueCsvImport } from "vue-csv-import";
 
 export default {

@@ -6,6 +6,23 @@
       </v-col>
       <v-col cols="9">
         <h1 class="headline mt-6 mb-6">Car tracker</h1>
+        <v-alert
+          :value="snackbar"
+        >
+          <v-card>
+            <v-card-text>
+              <div class="text-h4 pt-2 pb-2">Car details</div>
+              <div class="text-h5 pt-2 pb-2">City: {{ popupContent.city_id }}</div>
+              <div class="text-h5 pt-2 pb-2">Operator: {{ popupContent.operator_id }}</div>
+            </v-card-text>
+            <v-card-actions class="justify-end">
+              <v-btn
+                text
+                @click="snackbar = false"
+              >Close</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-alert>
         <div>
           <l-map
             :zoom.sync="zoom"
@@ -46,7 +63,7 @@
               :icon="icon"
               @click="alert(car)"
             >
-              <l-popup :content="popupContent" />
+              <!-- <l-popup :content="popupContent" /> -->
               <l-tooltip :content="car.tooltip" />
             </l-marker>
           </l-map>
@@ -65,7 +82,7 @@ import {
   LMap,
   LTileLayer,
   LMarker,
-  LPopup,
+  // LPopup,
   LTooltip,
   LControlZoom,
   LControlAttribution,
@@ -107,7 +124,7 @@ export default {
     LTileLayer,
     LMarker,
     LTooltip,
-    LPopup,
+    // LPopup,
     LControlZoom,
     LControlAttribution,
     LControlScale,
@@ -115,7 +132,7 @@ export default {
   },
   computed: {
     ...mapState({
-      cars: (state) => state.car.cars,
+      cars: (state) => state.car.operationalCars,
     }),
   },
   data() {
@@ -145,12 +162,14 @@ export default {
         iconUrl: Car,
         iconSize: [10, 10]
       }),
-      popupContent: ''
+      popupContent: '',
+      snackbar: false
     };
   },
   methods: {
     alert(item) {
-      this.popupContent = JSON.stringify(item);
+      this.popupContent = item;
+      this.snackbar = true;
     },
   },
 };

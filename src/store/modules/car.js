@@ -1,5 +1,5 @@
 const state = () => ({
-    cars: [ 
+    operationalCars: [ 
         {
             id: "c1",
             city_id: 'test1',

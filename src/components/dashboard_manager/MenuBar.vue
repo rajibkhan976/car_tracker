@@ -65,7 +65,7 @@
       return {
         items: [
             { title: 'Car', route: 'car-list', icon: 'mdi-car-traction-control' },
-            { title: 'Users', route: 'users-list', icon: 'mdi-account-group-outline' },
+            { title: 'Users', route: 'user-list', icon: 'mdi-account-group-outline' },
             { title: 'City', route: 'city-list', icon: 'mdi-home-city' },
             { title: 'Report', route: 'report', icon: 'mdi-finance' },
             { title: 'Tracking', route: 'tracking', icon: 'mdi-radar' },
