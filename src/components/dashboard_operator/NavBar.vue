@@ -40,7 +40,9 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title>
+              <router-link :to="item.route" class="d-block" tag="span" style="cursor: pointer">{{ item.title }}</router-link>
+            </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -62,7 +64,7 @@
     data () {
       return {
         items: [
-            { title: 'Navigation', icon: 'mdi-navigation-variant-outline' }
+            { title: 'Navigation', route: 'navigation', icon: 'mdi-navigation-variant-outline' }
         ],
         right: null,
         currentUser: sessionStorage.getItem('current_operator') ? sessionStorage.getItem('current_operator') : ''

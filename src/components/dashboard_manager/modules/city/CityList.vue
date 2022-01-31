@@ -80,13 +80,13 @@
                           <v-col cols="12" sm="6" md="4">
                             <v-text-field
                               v-model="editedItem.region"
-                              label="Car"
+                              label="Region"
                             ></v-text-field>
                           </v-col>
                           <v-col cols="12" sm="6" md="4">
                             <v-text-field
                               v-model="editedItem.country"
-                              label="Operator"
+                              label="Country"
                             ></v-text-field>
                           </v-col>
                         </v-row>
