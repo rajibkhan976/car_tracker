@@ -6,23 +6,28 @@
       </v-col>
       <v-col cols="9">
         <h1 class="headline mt-6 mb-6">Car tracker</h1>
-        <v-alert
-          :value="snackbar"
-        >
-          <v-card>
-            <v-card-text>
-              <div class="text-h4 pt-2 pb-2">Car details</div>
-              <div class="text-h5 pt-2 pb-2">City: {{ popupContent.city_id }}</div>
-              <div class="text-h5 pt-2 pb-2">Operator: {{ popupContent.operator_id }}</div>
-            </v-card-text>
-            <v-card-actions class="justify-end">
-              <v-btn
-                text
-                @click="snackbar = false"
-              >Close</v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-alert>
+        <v-row>
+          <v-col cols="12" sm="6">
+            <v-alert
+              :value="popUp"
+            >
+              <v-card>
+                <v-card-text>
+                  <div class="text-h5 pt-2 pb-2">Car details</div>
+                  <div class="text-h6 pt-2 pb-2">City: {{ popupContent.city_id }}</div>
+                  <div class="text-h6 pt-2 pb-2">Operator: {{ popupContent.operator_id }}</div>
+                </v-card-text>
+                <v-card-actions class="justify-end">
+                  <v-btn
+                    class="red lighten-3"
+                    text
+                    @click="popUp = false"
+                  >Close</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-alert>
+          </v-col>
+        </v-row>
         <div>
           <l-map
             :zoom.sync="zoom"
@@ -63,7 +68,6 @@
               :icon="icon"
               @click="alert(car)"
             >
-              <!-- <l-popup :content="popupContent" /> -->
               <l-tooltip :content="car.tooltip" />
             </l-marker>
           </l-map>
@@ -82,7 +86,6 @@ import {
   LMap,
   LTileLayer,
   LMarker,
-  // LPopup,
   LTooltip,
   LControlZoom,
   LControlAttribution,
@@ -124,7 +127,6 @@ export default {
     LTileLayer,
     LMarker,
     LTooltip,
-    // LPopup,
     LControlZoom,
     LControlAttribution,
     LControlScale,
@@ -163,19 +165,14 @@ export default {
         iconSize: [10, 10]
       }),
       popupContent: '',
-      snackbar: false
+      popUp: false
     };
   },
   methods: {
     alert(item) {
       this.popupContent = item;
-      this.snackbar = true;
+      this.popUp = true;
     },
   },
 };
 </script>
-<style>
-.leaflet-popup-content-wrapper {
-    width: 36em;
-}
-</style>

@@ -1,6 +1,17 @@
 const state = () => ({
     managers: [ { email: 'admin@volvo.com', password: '12345678'} ],
-    operators: [ { code: '123456' } ],
+    operators: [ 
+        { 
+            id: "c1",
+            city_id: 'test1',
+            operator_id: 'test11',
+            position: { lat: 35.6804, lng: 139.7690 },
+            tooltip: "Car1",
+            draggable: false,
+            visible: true,
+            code: '123456'
+        } 
+    ],
     loggedInManagers: [],
     loggedInOperators: []
 });

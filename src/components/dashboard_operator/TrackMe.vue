@@ -6,6 +6,28 @@
       </v-col>
       <v-col cols="9">
         <h1 class="headline mt-6 mb-6">Track my position</h1>
+        <v-row>
+          <v-col cols="12" sm="6">
+            <v-alert
+              :value="popUp"
+            >
+              <v-card>
+                <v-card-text>
+                  <div class="text-h5 pt-2 pb-2">Car details</div>
+                  <div class="text-h6 pt-2 pb-2">City: {{ popupContent.city_id }}</div>
+                  <div class="text-h6 pt-2 pb-2">Operator: {{ popupContent.operator_id }}</div>
+                </v-card-text>
+                <v-card-actions class="justify-end">
+                  <v-btn
+                    class="red lighten-3"
+                    text
+                    @click="popUp = false"
+                  >Close</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-alert>
+          </v-col>
+        </v-row>
         <div>
           <l-map
             :zoom.sync="zoom"
@@ -46,7 +68,6 @@
               :icon="icon"
               @click="alert(car)"
             >
-              <l-popup :content="popupContent" />
               <l-tooltip :content="car.tooltip" class="pa-16" />
             </l-marker>
           </l-map>
@@ -57,6 +78,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import NavBar from "./NavBar";
 import L from 'leaflet';
 import Car from '../../assets/car.png';
@@ -64,7 +86,6 @@ import {
   LMap,
   LTileLayer,
   LMarker,
-  LPopup,
   LTooltip,
   LControlZoom,
   LControlAttribution,
@@ -106,11 +127,15 @@ export default {
     LTileLayer,
     LMarker,
     LTooltip,
-    LPopup,
     LControlZoom,
     LControlAttribution,
     LControlScale,
     LControlLayers,
+  },
+  computed: {
+    ...mapState({
+      cars: (state) => state.user.operators,
+    }),
   },
   data() {
     return {
@@ -139,29 +164,15 @@ export default {
         iconUrl: Car,
         iconSize: [10, 10]
       }),
-      cars: [ 
-            {
-                id: "c1",
-                city_id: 'test1',
-                operator_id: 'test11',
-                position: { lat: 35.6804, lng: 139.7690 },
-                tooltip: "Car1",
-                draggable: false,
-                visible: true,
-            }
-        ],
+      popUp: false,
       popupContent: ''
     };
   },
   methods: {
     alert(item) {
-      this.popupContent = JSON.stringify(item);
+      this.popupContent = item;
+      this.popUp = true;
     },
   },
 };
 </script>
-<style>
-.leaflet-popup-content-wrapper {
-    width: 36em;
-}
-</style>
