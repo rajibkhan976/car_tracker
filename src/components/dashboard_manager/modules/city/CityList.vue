@@ -14,7 +14,7 @@
           >
             <template v-slot:top>
               <v-toolbar flat>
-                <v-toolbar-title>List of cities</v-toolbar-title>
+                <v-toolbar-title class="info--text">List of cities</v-toolbar-title>
                 <v-divider class="mx-4" inset vertical></v-divider>
                 <v-spacer></v-spacer>
                 <v-btn
@@ -50,7 +50,7 @@
                       <v-btn color="blue darken-1" text @click="closeAddItem">
                         Cancel
                       </v-btn>
-                      <v-btn color="blue darken-1" text @click="saveCities">
+                      <v-btn color="blue darken-1" :disabled="parseCities.length === 0" text @click="saveCities">
                         Save
                       </v-btn>
                     </v-card-actions>
@@ -280,7 +280,6 @@ export default {
             this.$store.dispatch('city/addCities', element);
           }
         });
-        console.log(this.parseCities);
         this.closeAddItem();
       }
     },
@@ -344,7 +343,6 @@ export default {
         this.$store.dispatch('city/assignCar', carAssigned);
       }
       this.closeAssign();
-      console.log(this.assignedCars);
     }
   },
 };

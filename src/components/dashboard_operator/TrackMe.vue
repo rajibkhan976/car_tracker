@@ -5,7 +5,7 @@
         <nav-bar />
       </v-col>
       <v-col cols="9">
-        <h1 class="headline mt-6 mb-6">Track my position</h1>
+        <div class="text-h6 primary--text mt-6 mb-6">Track my position</div>
         <v-row>
           <v-col cols="12" sm="6">
             <v-alert
@@ -13,7 +13,7 @@
             >
               <v-card>
                 <v-card-text>
-                  <div class="text-h5 pt-2 pb-2">Car details</div>
+                  <div class="text-h5 primary--text pt-2 pb-2">Car details</div>
                   <div class="text-h6 pt-2 pb-2">City: {{ popupContent.city_id }}</div>
                   <div class="text-h6 pt-2 pb-2">Operator: {{ popupContent.operator_id }}</div>
                 </v-card-text>

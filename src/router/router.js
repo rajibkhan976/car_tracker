@@ -11,6 +11,7 @@ import TrackMe from '../components/dashboard_operator/TrackMe.vue'
 import TrackCars from '../components/dashboard_manager/modules/tracking/TrackCars'
 import CarList from '../components/dashboard_manager/modules/car/CarList'
 import UserList from '../components/dashboard_manager/modules/user/UserList'
+import OperatorReport from '../components/dashboard_manager/modules/report/OperatorReport'
 
 Vue.use(VueRouter)
 
@@ -66,6 +67,11 @@ const router = new VueRouter({
             path: "/user-list",
             name: "user-list",
             component: UserList
+        },
+        {
+            path: "/report",
+            name: "report",
+            component: OperatorReport
         },
     ]
 });

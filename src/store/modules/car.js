@@ -73,6 +73,68 @@ const state = () => ({
             visible: true,
         },
     ],
+    car_list: [
+        {
+            id: 'test1',
+            model: 'test1',
+            operator: 'test1',
+            brand: 'text1'
+        },
+        {
+            id: 'test2',
+            model: 'test1',
+            operator: 'test1',
+            brand: 'text1'
+        },
+        {
+            id: 'test3',
+            model: 'test1',
+            operator: 'test1',
+            brand: 'text1'
+        },
+        {
+            id: 'test10',
+            model: 'test1',
+            operator: 'test1',
+            brand: 'text1'
+        },
+        {
+            id: 'test4',
+            model: 'test1',
+            operator: 'test1',
+            brand: 'text1'
+        },
+        {
+            id: 'test5',
+            model: 'test1',
+            operator: 'test1',
+            brand: 'text1'
+        },
+        {
+            id: 'test6',
+            model: 'test1',
+            operator: 'test1',
+            brand: 'text1'
+        },
+        {
+            id: 'test7',
+            model: 'test1',
+            operator: 'test1',
+            brand: 'text1'
+        },
+        {
+            id: 'test8',
+            model: 'test1',
+            operator: 'test1',
+            brand: 'text1'
+        },
+        {
+            id: 'test9',
+            model: 'test1',
+            operator: 'test1',
+            brand: 'text1'
+        },
+    ]
 });
 
 // getters

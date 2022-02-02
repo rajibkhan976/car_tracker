@@ -1,5 +1,10 @@
 const state = () => ({
-    managers: [ { email: 'admin@volvo.com', password: '12345678'} ],
+    managers: [ 
+        { 
+            email: 'admin@toyota.com', 
+            password: '12345678'
+        } 
+    ],
     operators: [ 
         { 
             id: "c1",
@@ -11,6 +16,106 @@ const state = () => ({
             visible: true,
             code: '123456'
         } 
+    ],
+    user_list: [
+        {
+            id: 'test1',
+            name: 'test1',
+            role: 'operator',
+            phone: '12345678'
+        },{
+            id: 'test2',
+            name: 'test1',
+            role: 'manager',
+            phone: '12345678'
+        },{
+            id: 'test3',
+            name: 'test1',
+            role: 'operator',
+            phone: '12345678'
+        },{
+            id: 'test4',
+            name: 'test1',
+            role: 'operator',
+            phone: '12345678'
+        },{
+            id: 'test5',
+            name: 'test1',
+            role: 'operator',
+            phone: '12345678'
+        },{
+            id: 'test6',
+            name: 'test1',
+            role: 'manager',
+            phone: '12345678'
+        },{
+            id: 'test7',
+            name: 'test1',
+            role: 'operator',
+            phone: '12345678'
+        },{
+            id: 'test8',
+            name: 'test1',
+            role: 'operator',
+            phone: '12345678'
+        },{
+            id: 'test9',
+            name: 'test1',
+            role: 'manager',
+            phone: '12345678'
+        },{
+            id: 'test10',
+            name: 'test1',
+            role: 'operator',
+            phone: '12345678'
+        },
+    ],
+    operator_report: [
+        {
+            id: 'test1',
+            name: 'test1',
+            hours_worked: '8 H',
+            extra_work: '1 H',
+            wage: '10 USD/H',
+            extra_wage: '15 USD/H',
+            date: '2022-02-01',
+        },
+        {
+            id: 'test2',
+            name: 'test2',
+            hours_worked: '8 H',
+            extra_work: 'O H',
+            wage: '10 USD/H',
+            extra_wage: '15 USD/H',
+            date: '2022-02-01',
+        },
+        {
+            id: 'test3',
+            name: 'test3',
+            hours_worked: '8 H',
+            extra_work: '2 H',
+            wage: '10 USD/H',
+            extra_wage: '15 USD/H',
+            date: '2022-02-01',
+        },
+        {
+            id: 'test4',
+            name: 'test4',
+            hours_worked: '8 H',
+            extra_work: 'O H',
+            wage: '10 USD/H',
+            extra_wage: '15 USD/H',
+            date: '2022-02-01',
+        },
+        {
+            id: 'test5',
+            name: 'test5',
+            hours_worked: '8 H',
+            extra_work: 'O H',
+            wage: '10 USD/H',
+            extra_wage: '15 USD/H',
+            date: '2022-02-15',
+        },
     ],
     loggedInManagers: [],
     loggedInOperators: []
