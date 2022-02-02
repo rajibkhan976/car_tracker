@@ -1,5 +1,19 @@
 # car-tracker
 
+# Manager login credential
+
+## email: admin@toyota.com
+## password: 12345678
+
+```
+# Operator login credential
+
+## code: 123456
+
+```
+## Please follow the attached csv format (cities.csv) to add cities
+## .DXF and .XML suppport has not been added to this release
+
 ## Project setup
 ```
 npm install
