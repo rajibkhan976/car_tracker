@@ -7,6 +7,11 @@ import ManagerDashboard from '../components/dashboard_manager/ManagerDashboard'
 import OperatorLogin from '../components/dashboard_operator/OperatorLogin'
 import OperatorDashboard from '../components/dashboard_operator/OperatorDashboard.vue'
 import CityList from '../components/dashboard_manager/modules/city/CityList'
+import TrackMe from '../components/dashboard_operator/TrackMe.vue'
+import TrackCars from '../components/dashboard_manager/modules/tracking/TrackCars'
+import CarList from '../components/dashboard_manager/modules/car/CarList'
+import UserList from '../components/dashboard_manager/modules/user/UserList'
+import OperatorReport from '../components/dashboard_manager/modules/report/OperatorReport'
 
 Vue.use(VueRouter)
 
@@ -42,6 +47,31 @@ const router = new VueRouter({
             path: "/city-list",
             name: "city-list",
             component: CityList
+        },
+        {
+            path: "/navigation",
+            name: "navigation",
+            component: TrackMe
+        },
+        {
+            path: "/tracking",
+            name: "tracking",
+            component: TrackCars
+        },
+        {
+            path: "/car-list",
+            name: "car-list",
+            component: CarList
+        },
+        {
+            path: "/user-list",
+            name: "user-list",
+            component: UserList
+        },
+        {
+            path: "/report",
+            name: "report",
+            component: OperatorReport
         },
     ]
 });
